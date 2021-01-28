@@ -1,0 +1,21 @@
+package com.ricardo.domingues.validpassword.entities;
+
+
+public class Password {
+
+	private String text;
+	
+	public Password(String text) {
+		super();	
+		this.text = text;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+}
