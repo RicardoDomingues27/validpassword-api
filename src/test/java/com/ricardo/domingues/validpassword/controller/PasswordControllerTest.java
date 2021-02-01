@@ -16,6 +16,8 @@ import io.restassured.http.ContentType;
 @SpringBootTest
 public class PasswordControllerTest {
 
+	private String path = "/v1/password";
+	
 	@Autowired
 	private PasswordController passwordController;
 	
@@ -34,7 +36,7 @@ public class PasswordControllerTest {
 			.body(dto)
 			.log().all()
 		.when()
-			.post("/password")
+			.post(path)
 		.then()
 			.statusCode(HttpStatus.OK.value());
 		
@@ -51,7 +53,7 @@ public class PasswordControllerTest {
 			.body(dto)
 			.log().all()
 		.when()
-			.post("/password")
+			.post(path)
 		.then()
 			.statusCode(HttpStatus.BAD_REQUEST.value());
 		
@@ -65,7 +67,7 @@ public class PasswordControllerTest {
 			.contentType(ContentType.JSON)
 			.log().all()
 		.when()
-			.post("/password")
+			.post(path)
 		.then()
 			.statusCode(HttpStatus.BAD_REQUEST.value());
 		

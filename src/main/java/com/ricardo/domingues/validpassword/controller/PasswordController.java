@@ -12,17 +12,33 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ricardo.domingues.validpassword.dto.PasswordDTO;
 import com.ricardo.domingues.validpassword.services.PasswordService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 
 @RestController
-@RequestMapping(value = "/password")
+@RequestMapping(value = "/v1")
+@Tag(name = "Controller" , description = "Endpoint to receive password text")
 public class PasswordController {
+	
 	@Autowired 
 	private PasswordService service;
+		
+	@Operation(summary = "Return password validate",
+			responses = {
+            @ApiResponse(responseCode = "200", description = "validated text",
+                    content = { @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = PasswordDTO.class))) }),
+            @ApiResponse(responseCode = "400", description = "text does not follow the requested requirements", content = @Content)
+            })
 	
-	@PostMapping
-	public ResponseEntity<Boolean> valid(@RequestBody @Valid PasswordDTO dto){			
+	@PostMapping("/password")
+	public ResponseEntity<Boolean> valid(@RequestBody @Valid PasswordDTO dto){	
 
-		Boolean response = service.validate(dto);
+		final Boolean response = service.validate(dto);
 		return response ? ResponseEntity.ok().body(response) : ResponseEntity.badRequest().body(response);		 
 	}
 	
