@@ -1,21 +1,42 @@
 package com.ricardo.domingues.validpassword.entities;
 
+import java.io.Serializable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class Password {
+import com.ricardo.domingues.validpassword.dto.PasswordDTO;
+import com.ricardo.domingues.validpassword.error.NotNullPasswordException;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Password implements Serializable{
+
+	private static final long serialVersionUID = 6391105446486034977L;
+	
 	private String text;
 	
-	public Password(String text) {
-		super();	
-		this.text = text;
+	public Password(PasswordDTO dto){
+		text = dto.getText();
 	}
 
-	public String getText() {
-		return text;
+	public Boolean isValid() throws NullPointerException {
+		Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()+-])(?!.*(.).*\\1).{9,}$");
+		Matcher matcher; 
+		
+		try{
+			matcher = pattern.matcher(this.text);
+		}catch(NullPointerException e){
+			throw new NotNullPasswordException("Not Null Password!");
+		}
+		
+		return  matcher.find();
 	}
-
-	public void setText(String text) {
-		this.text = text;
-	}
-
 }

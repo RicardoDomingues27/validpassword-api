@@ -1,25 +1,24 @@
 package com.ricardo.domingues.validpassword.dto;
 
+import java.io.Serializable;
+
 import com.ricardo.domingues.validpassword.entities.Password;
 
-public class PasswordDTO {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+public class PasswordDTO implements Serializable {
+
+	private static final long serialVersionUID = 2386881934264932754L;
+	
 	private String text;
 	
-	public PasswordDTO() {
-	}
-	
 	public PasswordDTO(Password password) {
-		super();
 		text = password.getText();
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
 	}
 
 }
