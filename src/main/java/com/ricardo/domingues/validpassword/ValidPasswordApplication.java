@@ -15,13 +15,12 @@ import io.swagger.v3.oas.annotations.info.Info;
 				contact = @Contact(name = "Ricardo Domingues", url = "", email = "ricardo.domingues27@gmail.com" )
 		)
 )
-
 @SpringBootApplication
-public class ValidpasswordApplication {
+public class ValidPasswordApplication {
 	
 	
 	public static void main(String[] args) {
-		SpringApplication.run(ValidpasswordApplication.class, args);
+		SpringApplication.run(ValidPasswordApplication.class, args);
 	}
 
 }

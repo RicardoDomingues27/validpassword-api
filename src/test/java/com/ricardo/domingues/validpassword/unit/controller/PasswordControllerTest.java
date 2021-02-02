@@ -1,4 +1,4 @@
-package com.ricardo.domingues.validpassword.controller;
+package com.ricardo.domingues.validpassword.unit.controller;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.standaloneSetup;
 
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
+import com.ricardo.domingues.validpassword.controller.PasswordController;
 import com.ricardo.domingues.validpassword.dto.PasswordDTO;
 import com.ricardo.domingues.validpassword.entities.Password;
 
@@ -16,7 +17,7 @@ import io.restassured.http.ContentType;
 @SpringBootTest
 public class PasswordControllerTest {
 
-	private String path = "/v1/password";
+	private final String path = "/v1/password";
 	
 	@Autowired
 	private PasswordController passwordController;

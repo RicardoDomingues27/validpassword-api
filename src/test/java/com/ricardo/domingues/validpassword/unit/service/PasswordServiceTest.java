@@ -1,4 +1,4 @@
-package com.ricardo.domingues.validpassword.service;
+package com.ricardo.domingues.validpassword.unit.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

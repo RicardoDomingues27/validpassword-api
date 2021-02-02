@@ -8,36 +8,27 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 
-import com.ricardo.domingues.validpassword.dto.PasswordDTO;
-
-import io.cucumber.messages.internal.com.google.gson.Gson;
-
 public class RestRT {
-
-    private final PasswordDTO responseDTO;
+    
     private final HttpStatus statusCode;
-    private final Boolean result;
+    private final Boolean response;
 
-    RestRT(final ClientHttpResponse response, final HttpStatus statusCode) throws IOException {
+    @SuppressWarnings("deprecation")
+	RestRT(final ClientHttpResponse response, final HttpStatus statusCode) throws IOException {
 
         this.statusCode = statusCode;
         final InputStream bodyInputStream = response.getBody();
         final StringWriter stringWriter = new StringWriter();
         IOUtils.copy(bodyInputStream, stringWriter);
-        System.out.println(stringWriter.toString());
-        this.responseDTO = new Gson().fromJson(stringWriter.toString(), PasswordDTO.class);
-        this.result = new Boolean(stringWriter.toString());
-    }
-
-    public PasswordDTO getResponseDTO() {
-        return responseDTO;
+        this.response = Boolean.parseBoolean(stringWriter.toString());       
+        
     }
 
     public HttpStatus getStatusCode() {
         return statusCode;
     }
     
-    public Boolean getResult() {
-    	return result;
+    public Boolean getResponse() {
+    	return response;
     }
 }

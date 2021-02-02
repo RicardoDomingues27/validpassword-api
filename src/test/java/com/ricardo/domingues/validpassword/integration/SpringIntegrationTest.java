@@ -7,14 +7,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpMethod;
 
-import com.ricardo.domingues.validpassword.ValidpasswordApplication;
-import com.ricardo.domingues.validpassword.integration.RestRT;
+import com.ricardo.domingues.validpassword.ValidPasswordApplication;
 
 import io.cucumber.messages.internal.com.google.gson.Gson;
 import io.cucumber.spring.CucumberContextConfiguration;
 
 @CucumberContextConfiguration
-@SpringBootTest(classes = ValidpasswordApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes = ValidPasswordApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class SpringIntegrationTest {
 
     private static final Gson GSON = new Gson();
