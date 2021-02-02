@@ -36,7 +36,7 @@ public class PasswordController {
             })
 	
 	@PostMapping("/password")
-	public ResponseEntity<Boolean> valid(@RequestBody @Valid PasswordDTO dto){	
+	public ResponseEntity<Boolean> isValid(@RequestBody @Valid PasswordDTO dto){	
 
 		final Boolean response = service.validate(dto);
 		return response ? ResponseEntity.ok().body(response) : ResponseEntity.badRequest().body(response);		 
