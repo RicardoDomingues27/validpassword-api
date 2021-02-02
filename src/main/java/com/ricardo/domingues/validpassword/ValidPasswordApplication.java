@@ -18,7 +18,6 @@ import io.swagger.v3.oas.annotations.info.Info;
 @SpringBootApplication
 public class ValidPasswordApplication {
 	
-	
 	public static void main(String[] args) {
 		SpringApplication.run(ValidPasswordApplication.class, args);
 	}

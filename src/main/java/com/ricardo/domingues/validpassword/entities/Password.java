@@ -9,14 +9,9 @@ import com.ricardo.domingues.validpassword.error.NotNullPasswordException;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 
 @Getter
-@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class Password implements Serializable{
 
 	private static final long serialVersionUID = 6391105446486034977L;
@@ -27,7 +22,7 @@ public class Password implements Serializable{
 		text = dto.getText();
 	}
 
-	public Boolean isValid() throws NullPointerException {
+	public Boolean isValid() {
 		Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()+-])(?!.*(.).*\\1).{9,}$");
 		Matcher matcher; 
 		
@@ -36,7 +31,6 @@ public class Password implements Serializable{
 		}catch(NullPointerException e){
 			throw new NotNullPasswordException("Not Null Password!");
 		}
-		
 		return  matcher.find();
 	}
 }

@@ -15,7 +15,7 @@ import com.ricardo.domingues.validpassword.entities.Password;
 import io.restassured.http.ContentType;
 
 @SpringBootTest
-public class PasswordControllerTest {
+class PasswordControllerTest {
 
 	private final String path = "/v1/password";
 	
@@ -27,7 +27,7 @@ public class PasswordControllerTest {
 		standaloneSetup(this.passwordController);
 	}
 	@Test 
-	public void  whenReceivePasswordOk_ReturnStatusOK() {
+	void  whenReceivePasswordOk_ReturnStatusOK() {
 		final Password password = new Password("AbTp9!fok");
 		final PasswordDTO dto = new PasswordDTO(password);
 		
@@ -44,7 +44,7 @@ public class PasswordControllerTest {
 	}	
 	
 	@Test
-	public void whenReceivePasswordIsEmpty_ReturnBadRequest() {
+	void whenReceivePasswordIsEmpty_ReturnBadRequest() {
 		final Password password = new Password("");
 		final PasswordDTO dto = new PasswordDTO(password);		
 		
@@ -61,7 +61,7 @@ public class PasswordControllerTest {
 	}
 	
 	@Test
-	public void whenNotReceivePassword_ReturnBadRequest() {		
+	void whenNotReceivePassword_ReturnBadRequest() {
 		
 		given()
 			.accept(ContentType.JSON)

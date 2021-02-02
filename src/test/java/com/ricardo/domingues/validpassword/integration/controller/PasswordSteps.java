@@ -14,12 +14,12 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 
 import com.ricardo.domingues.validpassword.dto.PasswordDTO;
 import com.ricardo.domingues.validpassword.entities.Password;
-import com.ricardo.domingues.validpassword.integration.SpringIntegrationTest;
+import com.ricardo.domingues.validpassword.integration.SpringIntegration;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class PasswordStepsTest extends SpringIntegrationTest {
+public class PasswordSteps extends SpringIntegration {
 
 
     @Autowired

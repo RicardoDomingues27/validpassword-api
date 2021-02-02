@@ -14,7 +14,7 @@ import io.cucumber.spring.CucumberContextConfiguration;
 
 @CucumberContextConfiguration
 @SpringBootTest(classes = ValidPasswordApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class SpringIntegrationTest {
+public class SpringIntegration {
 
     private static final Gson GSON = new Gson();
 
