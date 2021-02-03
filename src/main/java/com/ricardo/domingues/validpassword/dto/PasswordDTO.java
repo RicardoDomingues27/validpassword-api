@@ -2,7 +2,7 @@ package com.ricardo.domingues.validpassword.dto;
 
 import java.io.Serializable;
 
-import com.ricardo.domingues.validpassword.entities.Password;
+import com.ricardo.domingues.validpassword.model.Password;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

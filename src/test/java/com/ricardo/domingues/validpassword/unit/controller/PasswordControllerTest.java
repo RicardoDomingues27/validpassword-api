@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 
 import com.ricardo.domingues.validpassword.controller.PasswordController;
 import com.ricardo.domingues.validpassword.dto.PasswordDTO;
-import com.ricardo.domingues.validpassword.entities.Password;
+import com.ricardo.domingues.validpassword.model.Password;
 
 import io.restassured.http.ContentType;
 

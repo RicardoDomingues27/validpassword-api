@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.ricardo.domingues.validpassword.dto.PasswordDTO;
-import com.ricardo.domingues.validpassword.entities.Password;
+import com.ricardo.domingues.validpassword.model.Password;
 import com.ricardo.domingues.validpassword.services.PasswordService;
 
 

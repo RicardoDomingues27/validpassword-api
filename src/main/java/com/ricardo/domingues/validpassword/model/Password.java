@@ -1,4 +1,4 @@
-package com.ricardo.domingues.validpassword.entities;
+package com.ricardo.domingues.validpassword.model;
 
 import java.io.Serializable;
 import java.util.regex.Matcher;

@@ -3,7 +3,7 @@ package com.ricardo.domingues.validpassword.services;
 import org.springframework.stereotype.Service;
 
 import com.ricardo.domingues.validpassword.dto.PasswordDTO;
-import com.ricardo.domingues.validpassword.entities.Password;
+import com.ricardo.domingues.validpassword.model.Password;
 
 @Service
 public class PasswordService {
